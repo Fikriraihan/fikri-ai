@@ -17,11 +17,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ['https://fikri-portofolio.netlify.app']
+origins = ['https://fikri-portofolio.netlify.app', 'http://localhost:5173']
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ganti jadi domainmu kalau perlu
+    allow_origins=origins,  # Ganti jadi domainmu kalau perlu
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -116,172 +116,21 @@ for folder in folders:
     all_docs = md_docs + pdf_docs + txt_docs
     documents.extend(all_docs)
 
-    PORTFOLIO_CSS = """
-/* ============================================
-   GRADIO PORTFOLIO DESIGN SYSTEM CSS
-   Dark Space Theme with 3D Elements
-   ============================================ */
-
-
-
-:root {
-  color-scheme: dark;
-  --primary-bg: #0a0a0f;
-  --surface-bg: #1a1a2e;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-primary: #4a90e2;
-  --accent-secondary: #6b5b95;
-  --accent-tertiary: #ff6b6b;
-  --border-color: #333;
-  --border-focus: #4a90e2;
-  --gradient-bg: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0f 100%);
-  --shadow-glow: 0 8px 25px rgba(74, 144, 226, 0.3);
-  --border-radius: 12px;
-  --border-radius-lg: 16px;
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-}
-
-/* Main Container */
-body,
-html,
-.gradio-container,
-#root {
-  background: transparent !important;
-  color: var(--text-primary) !important;
-  font-family: system-ui, -apple-system, sans-serif !important;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.gradio-container .gr-block.gr-chat-interface > div:first-child {
-  background: transparent !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  width: 100%;
-}
-
-
-.div.svelte-vt1mxs,
-.svelte-vt1mxs,
-.svelte-1svsvh2,
-.bubble-wrap.svelte-gjtrl6.svelte-gjtrl6,
-.gr-button,
-section {
-  background: #110D25 !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.svelte-633qhp {
-    border: 1px solid #151030 !important;
-}
-
-
-/* Description only */
-.gr-description {
-  text-align: center !important;
-  max-width: 600px !important;
-  opacity: 0.85;
-  font-size: 1rem;
-  margin: 0 auto !important;
-}
-
-.svelte-yaaj3 {
-    min-width: 45px !important; 
-}
-
-.gr-textbox textarea,
-.gr-input input,
-input,
-textarea {
-  background-color: #151030 !important;
-  color: white !important;
-  border: 1px solid #2e2e2e !important;
-  border-radius: 10px !important;
-}
-
-.input-container.svelte-173056l.svelte-173056l {
-    gap: 12px !important;
-}
-
-.example.svelte-9pi8y1 {
-  background-color: #151030 !important;
-}
-
-. svelte-173056l {
-    height: 32px !important;
-}
-/* Chat bubble dari user */
-.message.user,
-.message.you {
-  background-color: #151030 !important;
-  color: white !important;
-  border-radius: 12px !important;
-  padding: 10px 16px !important;
-  margin-bottom: 8px !important;
-  width: fit-content !important;
-  max-width: 80%;
-}
-
-/* Chat bubble dari bot */
-.message.bot,
-.message.ai {
-  background-color: #110D25 !important;
-  color: white !important;
-  border-radius: 12px !important;
-  padding: 10px 16px !important;
-  margin-bottom: 8px !important;
-  width: fit-content !important;
-  max-width: 80%;
-}
-
-
-
-/* Starfield Animation */
-.gradio-container::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  animation: starfield 20s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.4;
-}
-
-footer,
-footer * {
-  display: none !important;
-}
-
-@keyframes starfield {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-100px); }
-}
-
-"""
-
 # =================== Vector Store ===================
 
 embeddings = OpenAIEmbeddings()
 
 # Clean previous vectorstore
-if os.path.exists(db_name):
-    import shutil
-    shutil.rmtree(db_name)
+rebuild = os.getenv("REBUILD_VECTOR", "false").lower() == "true"
 
-vectorstore = Chroma.from_documents(documents=documents, embedding=embeddings, persist_directory=db_name)
+if os.path.exists(db_name) and not rebuild:
+    vectorstore = Chroma(persist_directory=db_name, embedding_function=embeddings)
+else:
+    if os.path.exists(db_name):
+        import shutil
+        shutil.rmtree(db_name)
+    vectorstore = Chroma.from_documents(documents=documents, embedding=embeddings, persist_directory=db_name)
+
 
 # =================== Prompt & Chain ===================
 
@@ -358,15 +207,6 @@ def chat(request: ChatRequest):
         memory.clear()  # hanya clear saat user tidak kirim history apa pun
     return chat_api(request)
 
-# =================== Gradio Interface ===================
-
-
-# def chat_fn(message, history):
-#     response = conversation_chain.invoke({"question": message})
-#     return response["answer"]
-
-# with gr.Blocks(css=PORTFOLIO_CSS) as demo:
-#     gr.ChatInterface(chat_fn, title="Ask Fikri's AI", type="messages")
-
-# demo.launch()
-
+@app.get("/")
+def root():
+    return {"message": "Fikri AI backend is running"}
