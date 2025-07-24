@@ -1,4 +1,3 @@
-# Gunakan base image Python resmi dan ringan
 FROM python:3.12-slim
 
 # Set working directory
