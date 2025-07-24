@@ -1,0 +1,9 @@
+Hi, I’m Fikri Raihan—a Frontend Developer with 3+ years of experience building web apps using React.js, TypeScript, Zustand, React Query, and Tailwind CSS. I'm currently work at Planet Surf (PT Planet Selancar Mandiri) and PT Reycom Document Solusi (RDS), where I helped create internal dashboards, approval systems, and marketing tools that actually make people’s jobs easier.
+
+At Planet Surf, I worked on a Sales Panel Dashboard, a PU & Budgeting system, and a marketing platform to manage memberships and vouchers. At RDS, I was involved in building a Supplier Management System, Cirrust Workflow, and a Document Management System for enterprise clients.
+
+Lately, I’ve been diving deeper into backend development with Node.js and Python, learning more about system design, and exploring AI stuff like RAG (Retrieval-Augmented Generation) for personal projects.
+
+I’m always excited about learning new things, building useful products, and (hopefully soon) working remotely as a full-stack engineer. If you like talking about tech, AI, or software in general—let’s connect!
+
+Outside of coding, I’m into football, swimming, and jogging—anything that gets me moving. I can talk for hours about programming, whether it’s frontend frameworks or backend architecture. One day, I hope to work remotely and eventually become an independent developer. Oh, and fun fact: I can’t stand spicy food... but I keep trying anyway—maybe one day I’ll survive a full portion of sambal.

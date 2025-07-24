@@ -1,0 +1,41 @@
+
+# Jangan upload API key dan config lokal
+.env
+
+# File Python cache dan bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter dan IPython
+.ipynb_checkpoints/
+*.ipynb
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Virtual environment (jika tidak pakai uv)
+venv/
+.env/
+
+# Log files
+*.log
+
+# OS/Editor swap files
+*.swp
+*.swo
+*.bak
+
+# Langchain Vector DB folder (jika pakai Chroma)
+vector_db/
+
+# Docker build cache (opsional)
+*.tar
+*.img
+
+# Railway CLI config (opsional)
+.railway/

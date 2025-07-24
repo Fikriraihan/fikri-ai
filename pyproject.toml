@@ -1,0 +1,26 @@
+[project]
+name = "fikri-ai"
+version = "0.1.0"
+description = "AI backend for Fikri's assistant"
+authors = [
+  { name="Fikri Raihan", email="fikri.raihan4@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "gradio",
+    "python-dotenv",
+    "langchain",
+    "langchain-openai",
+    "langchain-community",
+    "langchain-chroma",
+    "openai",
+    "pypdf",
+]
+
+[dependency-groups.dev]
+dev = [
+    "ipykernel",
+]
