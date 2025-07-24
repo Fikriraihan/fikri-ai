@@ -1,7 +1,6 @@
 import os
 import glob
 from dotenv import load_dotenv
-import gradio as gr
 
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
