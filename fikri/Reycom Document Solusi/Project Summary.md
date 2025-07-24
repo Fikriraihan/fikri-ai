@@ -10,7 +10,7 @@
 
 Worked on both internal tools and client-facing applications to improve business process efficiency, including supplier systems, workflow automation platforms, and document management systems.
 
-- **Supplier Management System (Client: PT MKM)**
+- **E2E & Supplier Apps (Client: PT MKM)**
 - **Cirrust Workflow (Internal)**
 - **Cirrust Document Management System (Internal)**
 

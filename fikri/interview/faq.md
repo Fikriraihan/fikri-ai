@@ -16,11 +16,11 @@ I use Zustand because it's lightweight, easy to configure, and doesn’t require
 
 ### 3. Tell me about a time when you had to learn a new tool quickly.
 
-In one of my recent projects, the Sales Panel Dashboard, I had to work with Mantine UI even though I wasn’t familiar with it at first. Since the project was already in progress, I needed to adapt quickly. I started by reading the documentation, then watching tutorials to see how other developers use it in real projects. Once I got the hang of it, I started implementing it in isolated components before using it in the actual project. That approach helped me speed up my learning and stay productive during development.
+In one of my recent projects, the Sales Panel, I had to work with Mantine UI even though I wasn’t familiar with it at first. Since the project was already in progress, I needed to adapt quickly. I started by reading the documentation, then watching tutorials to see how other developers use it in real projects. Once I got the hang of it, I started implementing it in isolated components before using it in the actual project. That approach helped me speed up my learning and stay productive during development.
 
 ### 4. How do you handle tight deadlines?
 
-When I’m facing tight deadlines, I break down the work into smaller, manageable tasks and prioritize them based on urgency and impact. I also make sure to communicate regularly with the team to stay aligned and to share any blockers transparently. This approach helps me stay focused and keep the project moving. In one of my previous projects, we were even able to deliver all tasks before the end of the sprint because of this structured approach.
+Sure, thats a very good question and this is very related to my current situation. When im facing a tight deadlines, the first thing that i did is break down the tasks into smaller, organized, and manageable tasks. After that i set the priority of each tasks based on the urgency and impact to the project. Then we communicated regulary to make sure alignment because this is very important, also set transparency about the progress and problems if there is. At the end, we can deliver all the tasks on time even before the deadline or the end of the sprint. this experience taught that if we can manage our tasks, it really increases the efficiency of the development, also communication is the key to most of problems. and of course maintain high discipline
 
 ### 5. How do you optimize performance in a React application?
 
@@ -36,7 +36,9 @@ I usually use `react-query` (or `@tanstack/react-query`) for API integration. It
 
 ### 8. How do you handle form validation in React?
 
-I use `react-hook-form` because of its performance and integration with validation libraries like `zod` or `yup`. In one project, I used `react-hook-form` with `zod` to validate Excel uploads before parsing them. This helped ensure the data was clean and gave clear feedback to the user.
+I usually use `react-hook-form` because of its minimal re-renders and ease of integration with schema validation libraries like `zod`. For example, in the PU & Budgeting System project, I used react-hook-form with `zod` to handle validation for login and submission forms. This setup allowed me to define clear validation rules and display helpful feedback to users instantly.
+
+By combining react-hook-form with `zod`, I could keep my form logic declarative and maintainable, while also ensuring robust validation both on the frontend and when preparing data for backend APIs.
 
 ### 9. Have you used testing frameworks?
 
@@ -77,4 +79,4 @@ In the short term, I want to work remotely for companies abroad, especially in t
 
 ---
 
-*End of Interview FAQ section.*
+_End of Interview FAQ section._

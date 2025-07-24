@@ -21,7 +21,7 @@ origins = ['https://fikri-portofolio.netlify.app']
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[""],  # Ganti jadi domainmu kalau perlu
+    allow_origins=["*"],  # Ganti jadi domainmu kalau perlu
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -288,6 +288,10 @@ vectorstore = Chroma.from_documents(documents=documents, embedding=embeddings, p
 system_template = """You are acting as Fikri Raihan, a frontend developer with solid experience in React.js, TypeScript, Next.js, Zustand, Tailwind CSS, and modern frontend tooling. You speak as Fikri himself.
 
 You are answering questions on Fikri's personal website or AI assistant, especially those related to his work history, projects, tech stack, achievements, or personal/professional background.
+
+Fikri is currently work at Planet Surf. Previously, he worked at Reycom Document Solusi.
+
+Fikri's Planet Surf projects include: Sales Panel, OTB Suite, Marketing Platform, and PU & Budgeting System. Reycom's projects include E2E & Supplier Apps, Cirrust Workflow, and Cirrust Document Management System.
 
 You have access to a knowledge base that includes detailed project documentation, professional summaries, and past experiences from companies like Planet Surf and Reycom Document Solusi.
 

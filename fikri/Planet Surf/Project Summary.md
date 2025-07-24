@@ -2,172 +2,153 @@
 
 - **Role:** Front-End Developer
 - **Period:** Aug 2024 – Present
-- **Tech Stack:** React.js · Vite · TypeScript · JavaScript · Tailwind CSS · Zustand
+- **Tech Stack:** React.js · Vite · TypeScript · Zustand · Tailwind CSS · React Query · ShadCN · React Hook Form · Storybook
 
 ---
 
-## 🧐 Summary
+## 🧠 Overview
 
-Contributed to the development of three key internal platforms used by Area Managers, Operations, and Management Teams:
+Contributed to the end-to-end development of 4 major internal platforms used across various departments at Planet Surf, including:
 
-- **OTB Forecasting Platform**
-- **Sales Panel Dashboard**
-- **PU & Budgeting System**
+1. **OTB Suite**
+2. **Sales Panel**
+3. **Marketing Platform**
+4. **PU & Budgeting System**
 
----
-
-## 📁 Project: OTB Forecasting Platform
-
-- **Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query · Mantine
-- **Company:** Planet Surf
-
-An interactive dashboard that allows the OTB team to forecast inventory based on historical data. Users can upload Excel files, filter information, and view analyzed output in real-time.
-
-### 🔧 Key Contributions
-
-- Built modern UI/UX using React, Tailwind CSS, Zustand, and TypeScript.
-- Implemented core features including:
-
-  - File upload with validation (Excel)
-  - Dynamic and multi-level filtering
-  - Table view with zoom, pagination, and infinite scroll
-  - Data export to Excel
-
-### 📄 PRD Highlights
-
-**Objective:**
-To allow the OTB team to estimate inventory based on past data through intuitive data upload and filtering interfaces.
-
-**User Roles & Access:**
-
-| Role              | Access Level               |
-| ----------------- | -------------------------- |
-| Area Support Team | Update Target Ending Stock |
-| Analyst Team      | Analyze and view forecasts |
-| OTB & Ops Team    | Full platform access       |
-
-**Key Features:**
-
-1. Table and List Views with zoom functionality
-2. Infinite Scroll and Pagination toggle
-3. Upload Return, Target, and Closing Stock data
-4. Advanced multi-filtering
-
-**Functional Requirements:**
-
-- Switchable table/list views
-- Auto-categorized uploads into PD1, PD2, PD3
-- Fast, responsive filtering
-
-**Non-Functional Requirements:**
-
-- Load time under 30s with large datasets
-- Intuitive multi-user UX
-- Role-based data access and security
-
-**Milestones:**
-
-- **Phase 1 (Jul 15):** IHB data display, authentication, upload, table & filtering
-- **Phase 2 (Jul 19):** PD1/PD2/PD3 reports, parameter integration
-- **Phase 3 (Oct 25):** UI redesign, performance optimization, front-end improvements (led by me)
-
-**Success Metrics:**
-
-- 90% faster load time
-- Reduced manual tasks via automation
-- High scalability & secure access control
+Each system was designed with a focus on usability, performance, and scalability—helping internal teams automate previously manual workflows, centralize data visibility, and make data-driven decisions faster.
 
 ---
 
-## 📁 Project: Sales Panel Dashboard
+## 📊 OTB Suite
 
-- **Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query · React Hook Form · ShadCN UI
-- **Company:** Planet Surf
+**📌 Purpose:**  
+Empowers the OTB & Operations team to forecast inventory requirements based on historical data through flexible upload, filtering, and visualization features.
 
-A real-time dashboard designed for Area Managers and Store Heads to track sales performance by store, brand, and staff.
+**🛠 Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · Mantine · React Query
 
-### 🔧 Key Contributions
+**🔧 Contributions:**
 
-- Designed a responsive dashboard viewable across mobile and desktop
-- Developed data filtering by date, role, and region
-- Enabled secure downloads in PDF, Excel, and CSV format
-- Implemented role-based access to restrict data by user level
+- Built responsive UI with advanced table views (zoom, pagination, infinite scroll)
+- Implemented Excel upload + auto-categorization (PD1, PD2, PD3)
+- Enabled dynamic multi-parameter filtering
+- Export to Excel functionality
 
-### 📄 PRD Highlights
+**🎯 Pain Points & Solutions:**
 
-**Pain Points & Solutions:**
+- **Slow Data Load:** Migrated to optimized frontend architecture
+- **Complex UI:** Redesigned interface for ease of use
 
-- **Limited visibility:** introduced role-based performance insights
-- **Manual reporting:** centralized automated reporting
+**✅ Success Metrics:**
 
-**Features:**
+- ⏱ 90% faster data load time
+- ✅ Reduced manual reporting steps via automation
+- 🔐 Role-based secure access (Support, Analyst, OTB Team)
 
-1. Real-time Dashboard Insights
-2. Custom date filters
-3. Export options for reports
-
-**Functional Requirements:**
-
-- Visualization of sales metrics: revenue, target, achievement
-- Real-time data sync
-- Export to PDF, Excel, CSV
-- Role-specific views for AM, SSH, and Ops
-
-**Non-Functional Requirements:**
-
-- Load time under 3s
-- Cross-device compatibility
-- Role-based encryption and access
-
-**Version Releases:**
-
-- **v1.0:** Dashboard, Brand, Store, Staff insights
-- **v1.1:** Staff contribution tracking, search dropdown
-- **v1.2:** Dark mode, responsive fixes, UI upgrades
-
-**Success Metrics:**
-
-- 70% user adoption within 1 month
-- 98% data accuracy (cross-validated with iReap)
-- Monthly report generation by all users
+📄 See also: `OTB Suite/Project Description.md` (for detailed specs & timeline)
 
 ---
 
-## 📁 Project: PU & Budgeting System
+## 📈 Sales Panel
 
-- **Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query · React Hook Form · ShadCN UI · Storybook
-- **Company:** Planet Surf
+**📌 Purpose:**  
+Centralized dashboard for Area Managers and Store Heads to monitor sales metrics, track targets, and export performance reports.
 
-An internal system for managing requests and approvals for goods or services, involving multiple roles and dynamic approvals.
+**🛠 Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query · ShadCN · React Hook Form
 
-### 🔧 Key Contributions
+**🔧 Contributions:**
 
-- Developed the frontend using React (Vite), Zustand, Tailwind CSS, React Query, React Hook Form, and ShadCN
-- Helped define workflow logic and API structure with the team
-- Built dynamic multi-step forms and approval interface with role-based rendering
+- Created mobile-friendly dashboard with charts and filters
+- Developed export-to-PDF/Excel/CSV features
+- Built access-based UI for AMs, SSHs, and Ops
 
-### ✅ Workflow Steps
+**🎯 Pain Points & Solutions:**
 
-1. User submits a request for goods/services
-2. Approval by the user's department head
-3. Optional approval by relevant additional department heads
-4. Purchasing team provides vendor offering with price options
-5. User selects an offering
-6. System generates SPBDJ document summarizing request
-7. Final approval from division head
-8. PO (Purchase Order) creation
+- **Manual Data Compilation:** Built real-time synced dashboards
+- **Scattered Reporting:** Unified view with filters and exports
 
-### ⚡ Key Features
+**🚀 Feature Highlights:**
 
-- Dynamic form rendering based on request type and user role
-- Multi-role approval flow UI
-- File/document submission and review
-- SPBDJ generator
+- Sales breakdown by store, staff, brand
+- Target vs Achievement analysis
+- Staff contribution visibility
 
-### ⚖️ Challenges
+**✅ Success Metrics:**
 
-- Adapting UI across varied roles
-- Flexible form structure
-- Approval logic across multiple levels
+- 70% user adoption within first month
+- 98% report data accuracy (iReap-matched)
+- Monthly auto-reports used by Ops & Managers
+
+📄 See also: `Sales Panel/Project Description.md` (for detailed specs & timeline)
 
 ---
+
+## 📣 Marketing Loyalty Platform
+
+**📌 Purpose:**  
+Supports the Marketing Team in managing loyalty program campaigns—covering voucher creation, audience segmentation, notification scheduling, and ad banner decoration.
+
+**🛠 Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query
+
+**🔧 Contributions:**
+
+- Built UI for member management, voucher and audience creation
+- Integrated push notification scheduler and banner upload
+- Enabled targeting logic for vouchers based on member tiers
+
+**🎯 Pain Points & Solutions:**
+
+- **Manual Campaign Tracking:** Centralized campaign dashboard
+- **Lack of Targeting:** Created smart segmentation system
+
+**🚀 Feature Highlights:**
+
+- Member overview with filters by status and tier
+- Personalized voucher builder (min spend, time limit, etc.)
+- Notification scheduler and in-app banner editor
+- Campaign segmentation tools
+
+**✅ Success Metrics:**
+
+- 100% of campaigns now created from one platform
+- Improved member engagement through targeted outreach
+- Reduced voucher misuse via logic validation
+
+📄 See also: `Marketing Platform/Project Description.md` (for detailed specs & timeline)
+
+---
+
+## 💼 PU & Budgeting System
+
+**📌 Purpose:**  
+Automates internal procurement request and approval workflows—across departments and roles—with role-based steps and document generation.
+
+**🛠 Tech Stack:** React.js · Vite · Zustand · Tailwind CSS · React Query · Storybook · React Hook Form · ShadCN
+
+**🔧 Contributions:**
+
+- Created multi-role dynamic forms with conditional inputs
+- Implemented SPBDJ (procurement summary) generation flow
+- Built approval logic for department/division heads and purchasing
+
+**📍 Workflow Overview:**
+
+1. Request submission with attachments
+2. Multi-role approval chain
+3. Vendor offering & selection
+4. SPBDJ document creation
+5. Final PO processing
+
+**🎯 Pain Points & Solutions:**
+
+- **Unstructured Approvals:** Defined logical approval tree
+- **No Audit Trail:** Introduced form status tracking and role visibility
+
+**✅ Success Metrics:**
+
+- Shortened procurement cycle by 30%
+- High user satisfaction from department heads
+- Clear audit trails and approval history for compliance
+
+---
+
+> 💬 _Each of these platforms was designed with speed, usability, and clarity in mind — helping internal teams at Planet Surf transition from manual to fully digital workflows._
