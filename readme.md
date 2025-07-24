@@ -24,8 +24,7 @@ bash
 ├── pyproject.toml # Optional project metadata (for uv)
 ├── .gitignore
 ├── fikri/ # Knowledge base folder (markdown, PDFs, etc)
+│ ├── interview/
 │ ├── Planet Surf/
 │ ├── Reycom Document Solusi/
 │ └── me/
-
-gini aja?
